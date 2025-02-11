@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "138206592000",
+    "project_id": "geosnap-d6203",
+    "storage_bucket": "geosnap-d6203.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:138206592000:android:5eba55eabc7e6bbca8ace5",
+        "android_client_info": {
+          "package_name": "com.kayakstudio.geosnap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHqDU3wApPJZSlvTYrF1FPhkgnulQhai0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

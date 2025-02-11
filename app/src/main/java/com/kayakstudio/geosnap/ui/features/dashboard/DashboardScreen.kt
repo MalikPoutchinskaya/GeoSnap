@@ -1,0 +1,49 @@
+package com.kayakstudio.geosnap.ui.features.dashboard
+
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.platform.LocalContext
+import cafe.adriel.voyager.core.screen.Screen
+import cafe.adriel.voyager.koin.getScreenModel
+import cafe.adriel.voyager.navigator.LocalNavigator
+import cafe.adriel.voyager.navigator.currentOrThrow
+import cafe.adriel.voyager.navigator.tab.LocalTabNavigator
+import cafe.adriel.voyager.navigator.tab.TabNavigator
+import com.kayakstudio.geosnap.R
+import com.kayakstudio.geosnap.ui.design.components.snackbar.SnackbarManager.showErrorSnackbar
+import com.kayakstudio.geosnap.ui.features.main.GeoGuesserTab
+import kotlinx.coroutines.flow.collectLatest
+
+
+object DashboardScreen : Screen {
+
+    @Composable
+    override fun Content() {
+        val tabNavigator = LocalTabNavigator.current
+        val screenModel: DashboardScreenModel = getScreenModel<DashboardScreenModel>()
+        val uiState by screenModel.uiState.collectAsState()
+        val scope = rememberCoroutineScope()
+        val context = LocalContext.current
+
+        LaunchedEffect(Unit) {
+            screenModel.effect.collectLatest { effect ->
+                when (effect) {
+                    is DashboardContract.Effect.ShowErrorMessage ->
+                        scope.showErrorSnackbar(
+                            title = context.getString(R.string.defaultSnackbar_title_error),
+                            description = effect.message
+                        )
+
+                    DashboardContract.Effect.NavigateToGeoGuessScreen -> {
+                        tabNavigator.current = GeoGuesserTab
+                    }
+                }
+            }
+        }
+
+        DashboardScaffold(uiState = uiState) { screenModel.setEvent(it) }
+    }
+}
