@@ -2,7 +2,7 @@ package com.kayakstudio.geosnap.data.stubs
 
 import com.kayakstudio.geosnap.data.document.DocumentApi
 import com.kayakstudio.geosnap.data.player.PlayerApi
-import com.kayakstudio.geosnap.data.player.picture.PlayerPictureApi
+import com.kayakstudio.geosnap.data.picture.PlayerPictureApi
 import com.kayakstudio.geosnap.data.stubs.datasources.DocumentApiStub
 import com.kayakstudio.geosnap.data.stubs.datasources.PlayerApiStub
 import com.kayakstudio.geosnap.data.stubs.datasources.PlayerPictureApiStub

@@ -3,7 +3,6 @@ package com.kayakstudio.geosnap.ui.features.geoguesser
 import cafe.adriel.voyager.core.model.screenModelScope
 import com.google.android.gms.maps.model.LatLng
 import com.kayakstudio.geosnap.data.player.PlayerRepository
-import com.kayakstudio.geosnap.data.player.picture.PlayerPictureResult
 import com.kayakstudio.geosnap.data.user.UserRepository
 import com.kayakstudio.geosnap.tools.extensions.safeMessage
 import com.kayakstudio.geosnap.ui.tools.mvi.MviScreenModel

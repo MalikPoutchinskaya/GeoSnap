@@ -29,7 +29,7 @@ import androidx.compose.ui.graphics.TileMode
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.kayakstudio.geosnap.data.player.picture.PlayerPictureModel
+import com.kayakstudio.geosnap.data.picture.PlayerPictureModel
 import com.kayakstudio.geosnap.tools.extensions.toReadableDayMonth
 import com.kayakstudio.geosnap.ui.design.tokens.Dimens
 import com.kayakstudio.geosnap.ui.features.dashboard.DashboardContract

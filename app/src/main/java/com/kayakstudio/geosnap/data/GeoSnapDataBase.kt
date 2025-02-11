@@ -5,8 +5,8 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.kayakstudio.geosnap.data.player.PlayerEntity
 import com.kayakstudio.geosnap.data.player.RoomPlayerDao
-import com.kayakstudio.geosnap.data.player.picture.PlayerPictureEntity
-import com.kayakstudio.geosnap.data.player.picture.RoomPlayerPictureDao
+import com.kayakstudio.geosnap.data.picture.PlayerPictureEntity
+import com.kayakstudio.geosnap.data.picture.RoomPlayerPictureDao
 import com.kayakstudio.geosnap.data.user.RoomUserDao
 import com.kayakstudio.geosnap.data.user.UserEntity
 

@@ -1,10 +1,8 @@
 package com.kayakstudio.geosnap.data.player
 
 import com.kayakstudio.geosnap.data.apiutils.map
-import com.kayakstudio.geosnap.data.player.picture.PlayerPictureModel
-import com.kayakstudio.geosnap.data.player.picture.toEntity
-import com.kayakstudio.geosnap.data.player.picture.toModel
-import kotlinx.coroutines.flow.Flow
+import com.kayakstudio.geosnap.data.playerandpicture.PlayerAndPictureModel
+import com.kayakstudio.geosnap.data.playerandpicture.toModel
 
 class PlayerRepository(
     private val playerApi: PlayerApi,

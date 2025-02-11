@@ -1,6 +1,6 @@
 package com.kayakstudio.geosnap.data.stubs.scenario
 
-import com.kayakstudio.geosnap.data.player.picture.LocationDto
+import com.kayakstudio.geosnap.data.picture.LocationDto
 import com.kayakstudio.geosnap.data.stubs.databases.StubRemoteDatabase
 import com.kayakstudio.geosnap.data.stubs.samples.SampleDto
 import com.kayakstudio.geosnap.data.stubs.samples.SampleDto.playerPicture

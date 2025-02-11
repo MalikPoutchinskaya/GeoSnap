@@ -1,8 +1,7 @@
 package com.kayakstudio.geosnap.ui.features.geoguesser
 
 import com.google.android.gms.maps.model.LatLng
-import com.kayakstudio.geosnap.data.player.PlayerAndPictureModel
-import com.kayakstudio.geosnap.data.player.picture.PlayerPictureResult
+import com.kayakstudio.geosnap.data.playerandpicture.PlayerAndPictureModel
 import com.kayakstudio.geosnap.ui.tools.mvi.UiEffect
 import com.kayakstudio.geosnap.ui.tools.mvi.UiEvent
 import com.kayakstudio.geosnap.ui.tools.mvi.UiState

@@ -1,4 +1,4 @@
-package com.kayakstudio.geosnap.data.player.picture
+package com.kayakstudio.geosnap.data.picture
 
 import com.kayakstudio.geosnap.data.apiutils.ApiResponse
 import com.kayakstudio.geosnap.data.apiutils.safeRequest

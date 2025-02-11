@@ -2,7 +2,7 @@ package com.kayakstudio.geosnap.data.player
 
 import com.kayakstudio.geosnap.data.apiutils.ApiResponse
 import com.kayakstudio.geosnap.data.apiutils.safeRequest
-import com.kayakstudio.geosnap.data.player.picture.PlayerPictureDto
+import com.kayakstudio.geosnap.data.playerandpicture.PlayerAndPictureDto
 import io.ktor.client.HttpClient
 import io.ktor.client.request.get
 

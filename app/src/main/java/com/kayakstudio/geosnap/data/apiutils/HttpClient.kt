@@ -43,7 +43,7 @@ fun httpClient(
         apply {
             url {
                 protocol = if (isMockWithServer) URLProtocol.HTTP else URLProtocol.HTTPS
-                host = "" //FIXME
+                host = "" // TODO: add real backend enpoint
             }
             headers {
                 append(HttpHeaders.ContentType, "application/json")

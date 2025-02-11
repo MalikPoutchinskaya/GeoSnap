@@ -1,6 +1,5 @@
 package com.kayakstudio.geosnap.ui.features.profile
 
-import com.kayakstudio.geosnap.data.document.DocumentModel
 import com.kayakstudio.geosnap.data.user.UserModel
 import com.kayakstudio.geosnap.ui.features.profile.profileskillsselection.ProfileSkillSelectionType
 import com.kayakstudio.geosnap.ui.tools.mvi.UiEffect

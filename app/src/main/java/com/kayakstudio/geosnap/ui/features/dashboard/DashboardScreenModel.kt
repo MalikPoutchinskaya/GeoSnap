@@ -2,7 +2,7 @@ package com.kayakstudio.geosnap.ui.features.dashboard
 
 import cafe.adriel.voyager.core.model.screenModelScope
 import com.kayakstudio.geosnap.data.player.PlayerRepository
-import com.kayakstudio.geosnap.data.player.picture.PlayerPictureRepository
+import com.kayakstudio.geosnap.data.picture.PlayerPictureRepository
 import com.kayakstudio.geosnap.data.user.UserRepository
 import com.kayakstudio.geosnap.tools.extensions.safeMessage
 import com.kayakstudio.geosnap.ui.features.dashboard.DashboardContract.GeoGuessHistoriesStatus

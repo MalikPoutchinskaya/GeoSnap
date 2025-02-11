@@ -16,7 +16,7 @@
 package com.kayakstudio.geosnap.ui.features.dashboard
 
 import com.kayakstudio.geosnap.data.player.PlayerModel
-import com.kayakstudio.geosnap.data.player.picture.PlayerPictureModel
+import com.kayakstudio.geosnap.data.picture.PlayerPictureModel
 import com.kayakstudio.geosnap.ui.tools.mvi.UiEffect
 import com.kayakstudio.geosnap.ui.tools.mvi.UiEvent
 import com.kayakstudio.geosnap.ui.tools.mvi.UiState

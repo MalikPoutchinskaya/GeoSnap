@@ -2,8 +2,8 @@ package com.kayakstudio.geosnap.data.stubs.datasources
 
 import com.kayakstudio.geosnap.data.apiutils.ApiResponse
 import com.kayakstudio.geosnap.data.document.DocumentApi
-import com.kayakstudio.geosnap.data.player.picture.LocationDto
-import com.kayakstudio.geosnap.data.player.picture.PlayerPictureDto
+import com.kayakstudio.geosnap.data.picture.LocationDto
+import com.kayakstudio.geosnap.data.picture.PlayerPictureDto
 import com.kayakstudio.geosnap.data.stubs.databases.StubRemoteDatabase
 import com.kayakstudio.geosnap.data.stubs.scenario.USER_ID
 import com.raedghazal.kotlinx_datetime_ext.now

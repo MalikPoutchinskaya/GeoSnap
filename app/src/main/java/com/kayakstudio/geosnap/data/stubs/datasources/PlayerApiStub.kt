@@ -1,7 +1,7 @@
 package com.kayakstudio.geosnap.data.stubs.datasources
 
 import com.kayakstudio.geosnap.data.apiutils.ApiResponse
-import com.kayakstudio.geosnap.data.player.PlayerAndPictureDto
+import com.kayakstudio.geosnap.data.playerandpicture.PlayerAndPictureDto
 import com.kayakstudio.geosnap.data.player.PlayerApi
 import com.kayakstudio.geosnap.data.player.PlayerDto
 import com.kayakstudio.geosnap.data.stubs.databases.StubRemoteDatabase.playerPictures

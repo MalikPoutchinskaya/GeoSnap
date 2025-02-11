@@ -14,11 +14,11 @@ import com.kayakstudio.geosnap.data.player.KtorPlayerApi
 import com.kayakstudio.geosnap.data.player.PlayerApi
 import com.kayakstudio.geosnap.data.player.PlayerDao
 import com.kayakstudio.geosnap.data.player.PlayerRepository
-import com.kayakstudio.geosnap.data.player.picture.KtorPlayerPictureApi
-import com.kayakstudio.geosnap.data.player.picture.PlayerPictureApi
-import com.kayakstudio.geosnap.data.player.picture.PlayerPictureDao
-import com.kayakstudio.geosnap.data.player.picture.PlayerPictureRepository
-import com.kayakstudio.geosnap.data.player.picture.RoomPlayerPictureDao
+import com.kayakstudio.geosnap.data.picture.KtorPlayerPictureApi
+import com.kayakstudio.geosnap.data.picture.PlayerPictureApi
+import com.kayakstudio.geosnap.data.picture.PlayerPictureDao
+import com.kayakstudio.geosnap.data.picture.PlayerPictureRepository
+import com.kayakstudio.geosnap.data.picture.RoomPlayerPictureDao
 import com.kayakstudio.geosnap.data.stubs.apiStubModule
 import com.kayakstudio.geosnap.data.stubs.scenario.buildScenario
 import com.kayakstudio.geosnap.data.user.KtorUserApi

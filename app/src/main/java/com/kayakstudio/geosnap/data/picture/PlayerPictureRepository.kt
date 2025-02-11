@@ -1,11 +1,11 @@
-package com.kayakstudio.geosnap.data.player.picture
+package com.kayakstudio.geosnap.data.picture
 
 import com.kayakstudio.geosnap.data.apiutils.map
 import com.kayakstudio.geosnap.data.player.PlayerApi
 import com.kayakstudio.geosnap.data.player.PlayerDao
-import com.kayakstudio.geosnap.data.player.picture.PlayerPictureModel
-import com.kayakstudio.geosnap.data.player.picture.toEntity
-import com.kayakstudio.geosnap.data.player.picture.toModel
+import com.kayakstudio.geosnap.data.picture.PlayerPictureModel
+import com.kayakstudio.geosnap.data.picture.toEntity
+import com.kayakstudio.geosnap.data.picture.toModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

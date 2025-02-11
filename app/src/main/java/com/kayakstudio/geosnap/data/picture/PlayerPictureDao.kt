@@ -1,4 +1,4 @@
-package com.kayakstudio.geosnap.data.player.picture
+package com.kayakstudio.geosnap.data.picture
 
 import androidx.room.Dao
 import androidx.room.Query

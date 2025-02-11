@@ -43,8 +43,7 @@ import com.google.maps.android.compose.MarkerState
 import com.google.maps.android.compose.Polyline
 import com.google.maps.android.compose.rememberCameraPositionState
 import com.kayakstudio.geosnap.R
-import com.kayakstudio.geosnap.data.player.PlayerAndPictureModel
-import com.kayakstudio.geosnap.data.player.picture.PlayerPictureResult
+import com.kayakstudio.geosnap.data.playerandpicture.PlayerAndPictureModel
 import com.kayakstudio.geosnap.ui.design.components.AppBars
 import com.kayakstudio.geosnap.ui.design.components.Pictures
 import com.kayakstudio.geosnap.ui.design.components.ProfileMapMarker

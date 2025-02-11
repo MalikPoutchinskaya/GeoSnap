@@ -1,8 +1,8 @@
 package com.kayakstudio.geosnap.data.stubs.datasources
 
 import com.kayakstudio.geosnap.data.apiutils.ApiResponse
-import com.kayakstudio.geosnap.data.player.picture.PlayerPictureApi
-import com.kayakstudio.geosnap.data.player.picture.PlayerPictureDto
+import com.kayakstudio.geosnap.data.picture.PlayerPictureApi
+import com.kayakstudio.geosnap.data.picture.PlayerPictureDto
 import com.kayakstudio.geosnap.data.stubs.databases.StubRemoteDatabase.playerPictures
 import kotlinx.coroutines.delay
 

@@ -1,6 +1,7 @@
-package com.kayakstudio.geosnap.data.player
+package com.kayakstudio.geosnap.data.playerandpicture
 
-import com.kayakstudio.geosnap.data.player.picture.PlayerPictureDto
+import com.kayakstudio.geosnap.data.picture.PlayerPictureDto
+import com.kayakstudio.geosnap.data.player.PlayerDto
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

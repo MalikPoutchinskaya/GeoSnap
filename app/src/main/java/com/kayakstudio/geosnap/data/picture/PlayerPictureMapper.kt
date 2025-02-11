@@ -1,4 +1,4 @@
-package com.kayakstudio.geosnap.data.player.picture
+package com.kayakstudio.geosnap.data.picture
 
 import com.google.android.gms.maps.model.LatLng
 
