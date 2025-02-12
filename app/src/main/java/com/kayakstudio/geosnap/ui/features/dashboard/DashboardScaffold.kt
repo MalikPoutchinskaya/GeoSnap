@@ -41,7 +41,7 @@ fun DashboardScaffold(
         topBar = {
             AppBars.Top(
                 scrollBehavior = scrollBehavior,
-                title = "Welcome ${uiState.userName}"
+                title = stringResource(R.string.dashboardScreen_greeting_text, uiState.userName)
             )
         }
     ) {
@@ -76,7 +76,7 @@ fun DashboardContent(
             Column {
                 Texts.SubTitle(
                     modifier = Modifier.padding(horizontal = Dimens.horizontalScreenPadding),
-                    text = "Your last Geo Guess",
+                    text = stringResource(R.string.dashboardScreen_geoguess_text),
                 )
                 Spacer(modifier = Modifier.height(32.dp))
                 GeoGuesserHistories(geoGuessHistoriesStatus) {}
@@ -86,7 +86,7 @@ fun DashboardContent(
         item {
             Column(Modifier.padding(horizontal = Dimens.horizontalScreenPadding)) {
                 Texts.SubTitle(
-                    text = stringResource(R.string.dashboardScreen_upcomingMissions_title),
+                    text = stringResource(R.string.dashboardScreen_ranking_title),
                 )
                 Spacer(modifier = Modifier.height(32.dp))
                 RankingList(rankingStatus)

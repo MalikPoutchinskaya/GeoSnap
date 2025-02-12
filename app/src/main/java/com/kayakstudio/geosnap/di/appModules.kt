@@ -36,7 +36,6 @@ import com.kayakstudio.geosnap.ui.features.login.AuthScreenModel
 import com.kayakstudio.geosnap.ui.features.main.MainViewModel
 import com.kayakstudio.geosnap.ui.features.profile.ProfileScreenModel
 import com.kayakstudio.geosnap.ui.features.profile.aboutme.AboutMeScreenModel
-import com.kayakstudio.geosnap.ui.features.profile.profileskillsselection.ProfileSkillsSelectionScreenModel
 import com.kayakstudio.geosnap.ui.features.profile.settings.SettingsScreenModel
 import com.kayakstudio.geosnap.ui.features.profile.updatepassword.UpdatePasswordScreenModel
 import com.kayakstudio.geosnap.ui.features.profile.updateprofile.UpdateProfileScreenModel
@@ -69,7 +68,6 @@ val screenModelsModule =
         factoryOf(::UpdatePasswordScreenModel)
         factoryOf(::UpdateProfileScreenModel)
         factoryOf(::AboutMeScreenModel)
-        factoryOf(::ProfileSkillsSelectionScreenModel)
         factoryOf(::GeoGuesserScreenModel)
         factoryOf(::DashboardScreenModel)
         factoryOf(::CameraScreenModel)

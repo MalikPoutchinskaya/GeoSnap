@@ -10,14 +10,4 @@ class UserApiStub : UserApi {
     override suspend fun getProfile(): ApiResponse<UserDto> {
         return ApiResponse.Success(users.first())
     }
-
-    override suspend fun register(
-        displayName: String,
-        email: String,
-        firstName: String,
-        lastName: String,
-        phoneNumber: String?
-    ): ApiResponse<UserDto> {
-        return ApiResponse.Success(users.first())
-    }
 }

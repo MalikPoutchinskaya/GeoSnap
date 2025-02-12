@@ -1,11 +1,9 @@
 package com.kayakstudio.geosnap.ui.features.profile
 
 import com.kayakstudio.geosnap.data.user.UserModel
-import com.kayakstudio.geosnap.ui.features.profile.profileskillsselection.ProfileSkillSelectionType
 import com.kayakstudio.geosnap.ui.tools.mvi.UiEffect
 import com.kayakstudio.geosnap.ui.tools.mvi.UiEvent
 import com.kayakstudio.geosnap.ui.tools.mvi.UiState
-import io.github.vinceglb.filekit.core.PlatformFile
 
 /**
  *

@@ -11,7 +11,9 @@ import io.github.vinceglb.filekit.core.FileKit
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        enableEdgeToEdge()
+
+        enableEdgeToEdge()
+
         FileKit.init(this)
 
         setContent {
