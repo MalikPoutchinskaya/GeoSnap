@@ -81,6 +81,9 @@ dependencies {
     api(libs.firebase.crashlytics)
     api(libs.firebase.analytics)
 
+    // permissions
+    implementation (libs.accompanist.permissions)
+
     // serialization
     implementation(libs.kotlinx.serialization.json)
 
@@ -151,8 +154,6 @@ dependencies {
 
     // country code parsing
     implementation(libs.libphonenumber)
-
-    // FIXME
 
     // font
     implementation(libs.androidx.ui.text.google.fonts)

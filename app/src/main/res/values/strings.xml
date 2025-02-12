@@ -8,6 +8,7 @@
     <string name="aboutMeScreen_title">About Me</string>
 
     <!-- Camera Screen -->
+    <string name="cameraScreen_permission_button">Request permission</string>
     <string name="cameraScreen_permission_denied">Please grant camera access!</string>
     <string name="cameraScreen_permission_icon_desc">Warning Icon</string>
 

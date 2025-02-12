@@ -10,6 +10,7 @@ import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.getNavigatorScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
+import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.kayakstudio.geosnap.R
 import com.kayakstudio.geosnap.ui.design.components.snackbar.SnackbarManager.showErrorSnackbar
 import com.kayakstudio.geosnap.ui.features.camera.validation.UserGeoGuessValidationScreen

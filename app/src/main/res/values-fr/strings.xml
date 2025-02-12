@@ -8,6 +8,7 @@
     <string name="aboutMeScreen_title">À propos de moi</string>
 
     <!-- Camera Screen -->
+    <string name="cameraScreen_permission_button">Demander l\'autorisation</string>
     <string name="cameraScreen_permission_denied">Veuillez autoriser l\'accès à la caméra !</string>
     <string name="cameraScreen_permission_icon_desc">Icône d\'avertissement</string>
 

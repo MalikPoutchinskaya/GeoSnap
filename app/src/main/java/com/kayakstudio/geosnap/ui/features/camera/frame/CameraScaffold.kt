@@ -1,5 +1,6 @@
 package com.kayakstudio.geosnap.ui.features.camera.frame
 
+import android.Manifest
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -10,6 +11,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
@@ -35,8 +37,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.google.accompanist.permissions.ExperimentalPermissionsApi
+import com.google.accompanist.permissions.PermissionStatus
+import com.google.accompanist.permissions.isGranted
+import com.google.accompanist.permissions.rememberPermissionState
 import com.kayakstudio.geosnap.R
 import com.kayakstudio.geosnap.ui.design.components.AppBars
+import com.kayakstudio.geosnap.ui.design.components.Buttons
 import com.kayakstudio.geosnap.ui.design.components.Scaffolds
 import com.kayakstudio.geosnap.ui.design.tokens.Dimens
 import com.kayakstudio.geosnap.ui.features.camera.components.CameraButton
@@ -46,11 +53,14 @@ import com.preat.peekaboo.ui.camera.PeekabooCamera
 import com.preat.peekaboo.ui.camera.rememberPeekabooCameraState
 
 
+@OptIn(ExperimentalPermissionsApi::class)
 @Composable
 fun CameraScaffold(
     uiState: CameraContract.State,
     onEvent: (CameraContract.Event) -> Unit,
 ) {
+    val cameraPermissionState = rememberPermissionState(permission = Manifest.permission.CAMERA)
+
     // todo: Adjust compression if needed
     val resizeOptions = ResizeOptions(
         resizeThresholdBytes = 1048576L, // 1MB
@@ -70,20 +80,32 @@ fun CameraScaffold(
             state = cameraState,
             modifier = Modifier.fillMaxSize(),
             permissionDeniedContent = {
-                PermissionDenied(
-                    modifier = Modifier.fillMaxSize(),
-                )
+                PermissionDenied(modifier = Modifier.fillMaxSize())
             },
         )
         CameraOverlay(
+            permissionStatus = cameraPermissionState.status,
             isCapturing = uiState.isCapturing,
             onBackClicked = { onEvent(CameraContract.Event.OnUserClickOnPhotoClose) },
             onCaptureClicked = {
                 onEvent(CameraContract.Event.OnUserClickOnPhotoCapture)
                 cameraState.capture()
             }
-
         )
+        if (cameraPermissionState.status.isGranted.not()) {
+            Box(
+                Modifier
+                    .align(Alignment.BottomCenter)
+                    .navigationBarsPadding()
+                    .padding(
+                        horizontal = Dimens.horizontalScreenPadding,
+                        vertical = Dimens.verticalScreenPadding
+                    )
+            ) {
+                Buttons.Primary(stringResource(R.string.cameraScreen_permission_button)) { cameraPermissionState.launchPermissionRequest() }
+            }
+        }
+
     }
 }
 
@@ -109,9 +131,10 @@ fun PermissionDenied(modifier: Modifier = Modifier) {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalPermissionsApi::class)
 @Composable
 private fun CameraOverlay(
+    permissionStatus: PermissionStatus,
     isCapturing: Boolean,
     onBackClicked: () -> Unit,
     onCaptureClicked: () -> Unit,
@@ -132,27 +155,29 @@ private fun CameraOverlay(
             NavigationBar(
                 containerColor = bgColor,
             ) {
-                Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
-                    if (isCapturing) {
-                        Column(
-                            Modifier.align(Alignment.BottomCenter)
-                        ) {
-                            CircularProgressIndicator(
+                if (permissionStatus.isGranted) {
+                    Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
+                        if (isCapturing) {
+                            Column(
+                                Modifier.align(Alignment.BottomCenter)
+                            ) {
+                                CircularProgressIndicator(
+                                    modifier = Modifier
+                                        .size(70.dp)
+                                        .padding(bottom = 16.dp),
+                                    color = Color.White.copy(alpha = 0.7f),
+                                    strokeWidth = 8.dp,
+                                )
+                                Spacer(Modifier.height(16.dp))
+                            }
+                        } else {
+                            CameraButton(
                                 modifier = Modifier
-                                    .size(70.dp)
+                                    .align(Alignment.BottomCenter)
                                     .padding(bottom = 16.dp),
-                                color = Color.White.copy(alpha = 0.7f),
-                                strokeWidth = 8.dp,
+                                onClick = onCaptureClicked,
                             )
-                            Spacer(Modifier.height(16.dp))
                         }
-                    } else {
-                        CameraButton(
-                            modifier = Modifier
-                                .align(Alignment.BottomCenter)
-                                .padding(bottom = 16.dp),
-                            onClick = onCaptureClicked,
-                        )
                     }
                 }
             }

@@ -1,4 +1,5 @@
 [versions]
+accompanistPermissions = "0.37.0"
 agp = "8.8.0"
 konfettiCompose = "2.0.5"
 kotlin = "2.1.10"
@@ -49,6 +50,7 @@ pagingCommonVersion = "3.3.0-alpha02-0.5.1"
 uiTextGoogleFonts = "1.7.7"
 
 [libraries]
+accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanistPermissions" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
