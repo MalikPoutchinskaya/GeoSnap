@@ -25,7 +25,7 @@ fun GeoSnapSnackbarHost(modifier: Modifier = Modifier) {
             val type = SnackbarType.valueOf(parts.getOrNull(2) ?: SnackbarType.INFO.name)
             val actionLabel = parts.getOrNull(3)
 
-            PharmSnackbar(title, description, type, actionLabel){
+            GeoSnapSnackbar(title, description, type, actionLabel){
                 SnackbarManager.snackbarHostState.currentSnackbarData?.dismiss()
             }
         }

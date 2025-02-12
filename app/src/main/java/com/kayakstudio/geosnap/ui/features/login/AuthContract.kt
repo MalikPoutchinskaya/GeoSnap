@@ -26,6 +26,7 @@ class AuthContract {
         data class OnLastNameChanged(val userLastName: String) : Event()
         data class OnAccountPhoneNumberChanged(val accountPhoneNumber: AccountPhoneNumber) : Event()
         data class OnPasswordChanged(val password: String) : Event()
+        data class OnNewPasswordChanged(val password: String) : Event()
         data object OnUserLogin : Event()
         data object OnUserLoginWithGoogle : Event()
         data object OnUserSignup : Event()
@@ -43,6 +44,7 @@ class AuthContract {
         val userLastName: String,
         val userEmail: String,
         val password: String,
+        val newPassword: String,
         val accountPhoneNumber: AccountPhoneNumber,
         val isLoading: Boolean,
         val isLoggedIn: Boolean,

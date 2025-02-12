@@ -55,6 +55,7 @@
     <string name="signupScreen_form_lastNameLabel">Nom</string>
 
     <string name="signupScreen_form_phoneNumberLabel">Numéro de téléphone</string>
+    <string name="signupScreen_form_password">Mot de passe</string>
     <string name="signupScreen_form_phoneNumberHint">0612345678</string>
     <string name="defaultSnackbar_button_dismiss">Fermer</string>
     <string name="defaultSnackbar_title_error">Erreur</string>

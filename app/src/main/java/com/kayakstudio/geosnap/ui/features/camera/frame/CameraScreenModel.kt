@@ -1,4 +1,4 @@
-package com.kayakstudio.geosnap.ui.features.camera
+package com.kayakstudio.geosnap.ui.features.camera.frame
 
 import cafe.adriel.voyager.core.model.screenModelScope
 import com.kayakstudio.geosnap.data.document.DocumentRepository
@@ -16,7 +16,6 @@ class CameraScreenModel(
     MviScreenModel<CameraContract.Event, CameraContract.State, CameraContract.Effect>() {
     override fun createInitialState(): CameraContract.State =
         CameraContract.State(
-            pictureUrl = "",
             img = null,
             isCapturing = false,
             isSending = false,
@@ -24,16 +23,8 @@ class CameraScreenModel(
 
     override fun handleEvent(event: CameraContract.Event) {
         when (event) {
-            CameraContract.Event.OnUserClickOnLaunchCamera -> {
-                setState { copy(isCapturing = false) }
-                setEffect { CameraContract.Effect.NavigateToCameraScreen }
-            }
-
             CameraContract.Event.OnUserClickOnPhotoCapture ->
                 setState { copy(isCapturing = true) }
-
-            CameraContract.Event.OnUserClickOnBrowseGallery ->
-                setEffect { CameraContract.Effect.OpenGallery }
 
             is CameraContract.Event.OnPhotoCaptured ->
                 onPhotoCaptured(event.img)

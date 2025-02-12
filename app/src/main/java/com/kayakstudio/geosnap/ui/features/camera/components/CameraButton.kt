@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 @Composable
-internal fun InstagramCameraButton(
+internal fun CameraButton(
     modifier: Modifier = Modifier,
     size: Dp = 70.dp,
     borderSize: Dp = 5.dp,

@@ -18,7 +18,6 @@ import com.kayakstudio.geosnap.data.picture.KtorPlayerPictureApi
 import com.kayakstudio.geosnap.data.picture.PlayerPictureApi
 import com.kayakstudio.geosnap.data.picture.PlayerPictureDao
 import com.kayakstudio.geosnap.data.picture.PlayerPictureRepository
-import com.kayakstudio.geosnap.data.picture.RoomPlayerPictureDao
 import com.kayakstudio.geosnap.data.stubs.apiStubModule
 import com.kayakstudio.geosnap.data.stubs.scenario.buildScenario
 import com.kayakstudio.geosnap.data.user.KtorUserApi
@@ -30,7 +29,7 @@ import com.kayakstudio.geosnap.indus.analytics.Analytics
 import com.kayakstudio.geosnap.indus.analytics.AnalyticsSession
 import com.kayakstudio.geosnap.indus.analytics.FirebaseAnalyticsImpl
 import com.kayakstudio.geosnap.indus.crashlytics.CrashlyticsSession
-import com.kayakstudio.geosnap.ui.features.camera.CameraScreenModel
+import com.kayakstudio.geosnap.ui.features.camera.frame.CameraScreenModel
 import com.kayakstudio.geosnap.ui.features.dashboard.DashboardScreenModel
 import com.kayakstudio.geosnap.ui.features.geoguesser.GeoGuesserScreenModel
 import com.kayakstudio.geosnap.ui.features.login.AuthScreenModel
@@ -59,6 +58,7 @@ val toolingModule =
         single { Firebase.crashlytics }
         factoryOf(::FirebaseAnalyticsImpl) { bind<Analytics>() }
     }
+
 val screenModelsModule =
     module {
         factoryOf(::RouterScreenModel)
@@ -91,6 +91,7 @@ val authModule = module {
     singleOf(::FirebaseAuthHelperImpl) { bind<FirebaseAuthHelper>() }
 }
 
+// todo: not used at this stage
 val apiModule = module {
     single {
         val json =
@@ -118,12 +119,9 @@ val apiModule = module {
 
 val dataModule =
     module {
-//        if (isMock) {
+        // todo: replace apiStubModule by apiModule once BE ready
         includes(authModule, daoModule, apiStubModule)
         buildScenario()
-//        } else {
-//            includes(daoModule, apiModule)
-//        }
 
         includes(preferenceModule)
 

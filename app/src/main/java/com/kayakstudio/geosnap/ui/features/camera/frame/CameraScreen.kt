@@ -1,4 +1,4 @@
-package com.kayakstudio.geosnap.ui.features.camera
+package com.kayakstudio.geosnap.ui.features.camera.frame
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -30,7 +30,6 @@ object CameraScreen : Screen {
             screenModel.effect.collectLatest { effect ->
                 when (effect) {
                     is CameraContract.Effect.ShowPhotoSentMessage,
-                    is CameraContract.Effect.NavigateToCameraScreen -> {}
 
                     CameraContract.Effect.NavigateBack ->
                         navigator.pop()
@@ -40,8 +39,6 @@ object CameraScreen : Screen {
                             title = context.getString(R.string.defaultSnackbar_title_error),
                             description = effect.message
                         )
-
-                    CameraContract.Effect.OpenGallery -> {}
 
                     CameraContract.Effect.NavigateToGeoGuessValidationScreen ->
                         navigator.push(UserGeoGuessValidationScreen)

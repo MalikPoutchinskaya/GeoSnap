@@ -19,6 +19,7 @@ class AuthScreenModel(
             userLastName = "",
             userEmail = "",
             password = "",
+            newPassword = "",
             accountPhoneNumber = AccountPhoneNumber.init(),
             isLoading = false,
             isLoggedIn = false,
@@ -70,6 +71,8 @@ class AuthScreenModel(
             is AuthContract.Event.OnUserResendForgotPassword ->
                 resetPassword(isResend = true)
 
+            is AuthContract.Event.OnNewPasswordChanged ->
+                setState { copy(newPassword = event.password) }
         }
     }
 
@@ -99,7 +102,8 @@ class AuthScreenModel(
                 email = currentState.userEmail,
                 firstName = currentState.userFirstName,
                 lastName = currentState.userLastName,
-                phoneNumber = currentState.accountPhoneNumber.assembleFullPhoneNumber()
+                phoneNumber = currentState.accountPhoneNumber.assembleFullPhoneNumber(),
+                password = currentState.newPassword
             )
                 .onSuccess {
                     setState { copy(isLoading = false) }

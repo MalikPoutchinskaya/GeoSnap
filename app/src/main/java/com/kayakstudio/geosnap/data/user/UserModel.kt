@@ -9,7 +9,6 @@ data class UserModel(
     val phoneNumber: String,
     val aboutMe: String,
     val imageUrl: String?,
-    val imageId: Int?,
 ) {
     fun getFullName() = "$firstName $lastName"
 }

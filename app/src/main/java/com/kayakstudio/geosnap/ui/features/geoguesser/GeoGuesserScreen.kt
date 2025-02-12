@@ -44,6 +44,9 @@ import com.google.maps.android.compose.Polyline
 import com.google.maps.android.compose.rememberCameraPositionState
 import com.kayakstudio.geosnap.R
 import com.kayakstudio.geosnap.data.playerandpicture.PlayerAndPictureModel
+import com.kayakstudio.geosnap.indus.analytics.Analytics
+import com.kayakstudio.geosnap.indus.analytics.AnalyticsEvent
+import com.kayakstudio.geosnap.indus.analytics.TrackScreen
 import com.kayakstudio.geosnap.ui.design.components.AppBars
 import com.kayakstudio.geosnap.ui.design.components.Pictures
 import com.kayakstudio.geosnap.ui.design.components.ProfileMapMarker
@@ -60,6 +63,7 @@ import nl.dionsegijn.konfetti.core.Position
 import nl.dionsegijn.konfetti.core.Spread
 import nl.dionsegijn.konfetti.core.emitter.Emitter
 import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 import java.util.concurrent.TimeUnit
 
 
@@ -67,6 +71,9 @@ object GeoGuesserScreen : Screen, KoinComponent {
 
     @Composable
     override fun Content() {
+        val analytics by inject<Analytics>()
+        TrackScreen(analytics, AnalyticsEvent.ScreenName.GEO_GUESSER)
+
         val navigator = LocalNavigator.currentOrThrow
         val scope = rememberCoroutineScope()
         val screenModel: GeoGuesserScreenModel = getScreenModel<GeoGuesserScreenModel>()
@@ -88,12 +95,12 @@ object GeoGuesserScreen : Screen, KoinComponent {
             }
         }
 
-        GeoGuesserContent(state) { screenModel.setEvent(it) }
+        GeoGuesserScaffold(state) { screenModel.setEvent(it) }
     }
 }
 
 @Composable
-fun GeoGuesserContent(
+fun GeoGuesserScaffold(
     state: GeoGuesserContract.State,
     onEvent: (GeoGuesserContract.Event) -> Unit
 ) {

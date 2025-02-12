@@ -46,34 +46,6 @@ object Buttons {
     }
 
     @Composable
-    fun PrimarySmall(
-        text: String,
-        painter: Painter? = null,
-        isEnabled: Boolean = true,
-        onClick: () -> Unit,
-    ) {
-        Button(
-            enabled = isEnabled,
-            onClick = onClick,
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(50.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
-        ) {
-            if (painter != null) {
-                Image(
-                    painter = painter,
-                    contentDescription = null,
-                    colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onPrimaryContainer),
-                    modifier = Modifier.size(24.dp)
-                )
-                Spacer(modifier = Modifier.width(8.dp))
-            }
-            Text(text, color = MaterialTheme.colorScheme.onPrimaryContainer)
-        }
-    }
-
-    @Composable
     fun Secondary(
         text: String,
         painter: Painter? = null,

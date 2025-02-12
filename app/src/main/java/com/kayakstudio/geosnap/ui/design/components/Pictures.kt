@@ -30,7 +30,7 @@ import io.kamel.image.asyncPainterResource
 
 object Pictures {
     @Composable
-    fun Avatar(imageUrl: String, height: Dp=80.dp) {
+    fun Avatar(imageUrl: String, height: Dp = 80.dp) {
         Avatar(asyncPainterResource(data = imageUrl), height)
     }
 
@@ -52,7 +52,7 @@ object Pictures {
     }
 
     @Composable
-    fun Avatar(res: Resource<Painter>, height: Dp=80.dp) {
+    fun Avatar(res: Resource<Painter>, height: Dp = 80.dp) {
         KamelImage(
             resource = { res },
             contentDescription = "Avatar",
@@ -91,7 +91,9 @@ object Pictures {
             resource = { res },
             contentDescription = "GeoGuesserImage",
             contentScale = ContentScale.Crop,
-            modifier = Modifier.fillMaxSize().aspectRatio(1f),
+            modifier = Modifier
+                .fillMaxSize()
+                .aspectRatio(1f),
             onLoading = {
                 CircularProgressIndicator(color = MaterialTheme.colorScheme.onPrimary)
             },

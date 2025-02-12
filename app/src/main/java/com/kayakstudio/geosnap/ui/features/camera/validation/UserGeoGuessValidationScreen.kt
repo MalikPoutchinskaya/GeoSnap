@@ -13,8 +13,8 @@ import cafe.adriel.voyager.navigator.currentOrThrow
 import com.kayakstudio.geosnap.R
 import com.kayakstudio.geosnap.ui.design.components.snackbar.SnackbarManager.showErrorSnackbar
 import com.kayakstudio.geosnap.ui.design.components.snackbar.SnackbarManager.showSuccessSnackbar
-import com.kayakstudio.geosnap.ui.features.camera.CameraContract
-import com.kayakstudio.geosnap.ui.features.camera.CameraScreenModel
+import com.kayakstudio.geosnap.ui.features.camera.frame.CameraContract
+import com.kayakstudio.geosnap.ui.features.camera.frame.CameraScreenModel
 import kotlinx.coroutines.flow.collectLatest
 
 object UserGeoGuessValidationScreen : Screen {
@@ -30,10 +30,8 @@ object UserGeoGuessValidationScreen : Screen {
         LaunchedEffect(Unit) {
             screenModel.effect.collectLatest { effect ->
                 when (effect) {
-                    is CameraContract.Effect.NavigateToCameraScreen,
-                    CameraContract.Effect.OpenGallery,
-                    CameraContract.Effect.NavigateToGeoGuessValidationScreen,
-                        -> {
+                    CameraContract.Effect.NavigateToGeoGuessValidationScreen -> {
+                        // nothing here, using shared VM to simplify logic
                     }
 
                     CameraContract.Effect.NavigateBack ->

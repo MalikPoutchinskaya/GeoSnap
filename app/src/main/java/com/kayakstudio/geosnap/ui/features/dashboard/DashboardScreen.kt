@@ -13,15 +13,23 @@ import cafe.adriel.voyager.navigator.currentOrThrow
 import cafe.adriel.voyager.navigator.tab.LocalTabNavigator
 import cafe.adriel.voyager.navigator.tab.TabNavigator
 import com.kayakstudio.geosnap.R
+import com.kayakstudio.geosnap.indus.analytics.Analytics
+import com.kayakstudio.geosnap.indus.analytics.AnalyticsEvent
+import com.kayakstudio.geosnap.indus.analytics.TrackScreen
 import com.kayakstudio.geosnap.ui.design.components.snackbar.SnackbarManager.showErrorSnackbar
 import com.kayakstudio.geosnap.ui.features.main.GeoGuesserTab
 import kotlinx.coroutines.flow.collectLatest
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 
 
-object DashboardScreen : Screen {
+object DashboardScreen : Screen, KoinComponent {
 
     @Composable
     override fun Content() {
+        val analytics by inject<Analytics>()
+        TrackScreen(analytics, AnalyticsEvent.ScreenName.DASHBOARD)
+
         val tabNavigator = LocalTabNavigator.current
         val screenModel: DashboardScreenModel = getScreenModel<DashboardScreenModel>()
         val uiState by screenModel.uiState.collectAsState()

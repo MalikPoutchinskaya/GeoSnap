@@ -37,8 +37,8 @@ import io.kamel.image.KamelImage
 import io.kamel.image.asyncPainterResource
 
 @Composable
-fun InstagramStories(
-    storiesStatus: DashboardContract.GeoGuessHistoriesStatus,
+fun GeoGuesserHistories(
+    geoGuessHistoriesStatus: DashboardContract.GeoGuessHistoriesStatus,
     modifier: Modifier = Modifier,
     onClick: () -> Unit,
 ) {
@@ -50,14 +50,14 @@ fun InstagramStories(
         horizontalArrangement = Arrangement.spacedBy(12.dp),
         contentPadding = PaddingValues(horizontal = Dimens.horizontalScreenPadding),
     ) {
-        when (storiesStatus) {
+        when (geoGuessHistoriesStatus) {
             DashboardContract.GeoGuessHistoriesStatus.Error -> {
                 item { Text("An error occurred") }
             }
 
             DashboardContract.GeoGuessHistoriesStatus.Loading -> item { CircularProgressIndicator() }
             is DashboardContract.GeoGuessHistoriesStatus.Success -> {
-                items(storiesStatus.geoGuessHistories) { geoGuessHistory ->
+                items(geoGuessHistoriesStatus.geoGuessHistories) { geoGuessHistory ->
                     StoryItem(story = geoGuessHistory) { onClick() }
                 }
             }

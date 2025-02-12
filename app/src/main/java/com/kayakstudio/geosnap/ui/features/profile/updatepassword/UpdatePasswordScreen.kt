@@ -38,6 +38,7 @@ import com.kayakstudio.geosnap.R
 import com.kayakstudio.geosnap.ui.design.components.AppBars
 import com.kayakstudio.geosnap.ui.design.components.Scaffolds
 import com.kayakstudio.geosnap.ui.design.components.TextFields
+import com.kayakstudio.geosnap.ui.design.components.TextFields.PasswordField
 import com.kayakstudio.geosnap.ui.design.components.snackbar.SnackbarManager.showErrorSnackbar
 import kotlinx.coroutines.flow.collectLatest
 import org.koin.core.component.KoinComponent
@@ -110,30 +111,5 @@ fun UpdatePasswordContent(
                 onFirstButtonClicked = { onEvent(UpdatePasswordContract.Event.OnNavigateBack) },
             )
         }
-    )
-}
-
-@Composable
-private fun PasswordField(
-    label: String, value: String, onValueChange: (String) -> Unit
-) {
-    var passwordVisibility by remember { mutableStateOf(false) }
-    TextFields.TextField(
-        value = value,
-        onValueChange = onValueChange,
-        label = label,
-        hint = stringResource(R.string.loginScreen_form_passwordHint),
-        modifier = Modifier.fillMaxWidth(),
-        visualTransformation = if (passwordVisibility) VisualTransformation.None else PasswordVisualTransformation(),
-        trailingIcon = {
-            val image =
-                if (passwordVisibility) Icons.Filled.Visibility else Icons.Filled.VisibilityOff
-            IconButton(onClick = { passwordVisibility = !passwordVisibility }) {
-                Icon(imageVector = image, contentDescription = null)
-            }
-        },
-        keyboardOptions = KeyboardOptions.Default.copy(
-            keyboardType = KeyboardType.Password
-        ),
     )
 }

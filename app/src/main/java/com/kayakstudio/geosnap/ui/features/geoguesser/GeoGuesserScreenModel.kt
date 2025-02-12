@@ -4,13 +4,18 @@ import cafe.adriel.voyager.core.model.screenModelScope
 import com.google.android.gms.maps.model.LatLng
 import com.kayakstudio.geosnap.data.player.PlayerRepository
 import com.kayakstudio.geosnap.data.user.UserRepository
+import com.kayakstudio.geosnap.indus.analytics.Analytics
+import com.kayakstudio.geosnap.indus.analytics.AnalyticsEvent
 import com.kayakstudio.geosnap.tools.extensions.safeMessage
+import com.kayakstudio.geosnap.ui.features.dashboard.DashboardContract
 import com.kayakstudio.geosnap.ui.tools.mvi.MviScreenModel
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 
 class GeoGuesserScreenModel(
     private val userRepository: UserRepository,
     private val playerRepository: PlayerRepository,
+    private val analytics: Analytics,
 ) : MviScreenModel<GeoGuesserContract.Event, GeoGuesserContract.State, GeoGuesserContract.Effect>() {
 
 
@@ -43,9 +48,22 @@ class GeoGuesserScreenModel(
         }
     }
 
+    private val exceptionHandler =
+        CoroutineExceptionHandler { _, exception ->
+            val errorMessage = exception.safeMessage()
+            setEffect { GeoGuesserContract.Effect.ShowErrorMessage(errorMessage) }
+        }
+
 
     init {
-        screenModelScope.launch {
+        getGeoGuessPictures()
+    }
+
+    /**
+     *
+     */
+    private fun getGeoGuessPictures() {
+        screenModelScope.launch(exceptionHandler) {
             val user = userRepository.getUserOrThrow()
             playerRepository.getGeoGuessPictures(user.id)
                 .onSuccess {
@@ -62,7 +80,7 @@ class GeoGuesserScreenModel(
      *
      */
     private fun onReveal(playerId: String, pictureId: String, selectedLocation: LatLng) {
-        screenModelScope.launch {
+        screenModelScope.launch(exceptionHandler) {
             val result = PlayerPictureResult(
                 playerId = playerId,
                 pictureId = pictureId,
@@ -83,6 +101,7 @@ class GeoGuesserScreenModel(
         if (currentState.playersAndPictures.size > newIndex) {
             setState { copy(index = newIndex, isRevealed = false, isLoading = false) }
         } else {
+            analytics.trackEvent(AnalyticsEvent.GeoGuesserFinished)
             setState { copy(isFinished = true, isLoading = false) }
         }
     }

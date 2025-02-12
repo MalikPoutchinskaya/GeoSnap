@@ -1,7 +1,7 @@
 package com.kayakstudio.geosnap.data.stubs.databases
 
-import com.kayakstudio.geosnap.data.player.PlayerDto
 import com.kayakstudio.geosnap.data.picture.PlayerPictureDto
+import com.kayakstudio.geosnap.data.player.PlayerDto
 import com.kayakstudio.geosnap.data.user.UserDto
 
 object StubRemoteDatabase {

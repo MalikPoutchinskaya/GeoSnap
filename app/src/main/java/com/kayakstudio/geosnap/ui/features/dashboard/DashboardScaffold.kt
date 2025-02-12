@@ -24,7 +24,7 @@ import com.kayakstudio.geosnap.ui.design.tokens.Dimens
 import com.kayakstudio.geosnap.ui.features.dashboard.DashboardContract.GeoGuessHistoriesStatus
 import com.kayakstudio.geosnap.ui.features.dashboard.DashboardContract.RankingStatus
 import com.kayakstudio.geosnap.ui.features.dashboard.components.GeoGuessCard
-import com.kayakstudio.geosnap.ui.features.dashboard.components.InstagramStories
+import com.kayakstudio.geosnap.ui.features.dashboard.components.GeoGuesserHistories
 import com.kayakstudio.geosnap.ui.features.dashboard.components.RankingList
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -79,7 +79,7 @@ fun DashboardContent(
                     text = "Your last Geo Guess",
                 )
                 Spacer(modifier = Modifier.height(32.dp))
-                InstagramStories(geoGuessHistoriesStatus) {}
+                GeoGuesserHistories(geoGuessHistoriesStatus) {}
             }
         }
 

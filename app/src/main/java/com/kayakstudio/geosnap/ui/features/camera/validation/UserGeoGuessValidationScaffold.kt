@@ -5,7 +5,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
@@ -22,7 +21,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import com.kayakstudio.geosnap.ui.design.components.AppBars
 import com.kayakstudio.geosnap.ui.design.components.Scaffolds
-import com.kayakstudio.geosnap.ui.features.camera.CameraContract
+import com.kayakstudio.geosnap.ui.features.camera.frame.CameraContract
 import com.kayakstudio.geosnap.ui.tools.extensions.convertToImageBitmap
 
 @OptIn(ExperimentalMaterial3Api::class)

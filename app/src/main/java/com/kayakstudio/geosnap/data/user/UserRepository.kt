@@ -4,7 +4,6 @@ import co.touchlab.kermit.Logger
 import com.kayakstudio.geosnap.data.apiutils.map
 import com.kayakstudio.geosnap.data.app.AppRepository
 import com.kayakstudio.geosnap.data.auth.FirebaseAuthHelper
-import com.kayakstudio.geosnap.data.stubs.samples.SampleEntities
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
@@ -33,22 +32,14 @@ class UserRepository(
         email: String,
         firstName: String,
         lastName: String,
+        password: String,
         phoneNumber: String?,
     ): Result<Unit> {
         return authHelper.signup(
-            email = email, password = "azerty", userName = "$firstName $lastName"
+            email = email, password = password, userName = "$firstName $lastName"
         ).map {}.onSuccess {
             authHelper.sendPasswordResetEmail(email)
         }
-//        return userApi.register(
-//            displayName = "$firstName $lastName",
-//            email = email,
-//            firstName = firstName,
-//            lastName = lastName,
-//            phoneNumber = phoneNumber
-//        ).map {}.onSuccess {
-//            authHelper.sendPasswordResetEmail(email)
-//        }
     }
 
     //

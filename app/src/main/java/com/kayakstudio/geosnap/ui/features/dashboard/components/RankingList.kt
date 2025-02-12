@@ -25,9 +25,6 @@ import com.kayakstudio.geosnap.ui.features.dashboard.DashboardContract
 
 @Composable
 fun RankingList(rankingStatus: DashboardContract.RankingStatus) {
-    val rankWidth = 40.dp
-    val ptsWidth = rankWidth
-
     Column(modifier = Modifier.fillMaxWidth()) {
         when (rankingStatus) {
             DashboardContract.RankingStatus.Error -> {

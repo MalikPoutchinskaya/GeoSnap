@@ -19,7 +19,7 @@ import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import cafe.adriel.voyager.navigator.tab.CurrentTab
 import cafe.adriel.voyager.navigator.tab.TabNavigator
-import com.kayakstudio.geosnap.ui.features.camera.CameraScreen
+import com.kayakstudio.geosnap.ui.features.camera.frame.CameraScreen
 import kotlinx.coroutines.flow.collectLatest
 
 object MainScreen : Screen {

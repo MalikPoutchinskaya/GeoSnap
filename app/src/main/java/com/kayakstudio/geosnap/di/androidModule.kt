@@ -15,15 +15,20 @@ import com.facebook.flipper.plugins.network.NetworkFlipperPlugin
 import com.kayakstudio.geosnap.data.Converters
 import com.kayakstudio.geosnap.data.DATABASE_NAME
 import com.kayakstudio.geosnap.data.GeoSnapDataBase
+import com.kayakstudio.geosnap.tools.android.AndroidOpenExternalApp
+import com.kayakstudio.geosnap.tools.android.OpenExternalApp
 import com.russhwolf.settings.Settings
 import com.russhwolf.settings.SharedPreferencesSettings
 import io.ktor.client.engine.okhttp.OkHttp
 import kotlinx.coroutines.Dispatchers
+import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 
 val androidModule =
     module {
+        singleOf(::AndroidOpenExternalApp) { bind<OpenExternalApp>() }
+
         single { NetworkFlipperPlugin() }
         single { FlipperOkhttpInterceptor(get(), true) }
 
@@ -47,11 +52,11 @@ val androidModule =
         single {
             OkHttp.create {
                 addInterceptor(get<FlipperOkhttpInterceptor>())
-//                addInterceptor(get<ChuckerInterceptor>())
             }
         }
 
         singleOf(::Converters)
+
         single {
             val path = get<Context>().getDatabasePath(DATABASE_NAME).absolutePath
             Room

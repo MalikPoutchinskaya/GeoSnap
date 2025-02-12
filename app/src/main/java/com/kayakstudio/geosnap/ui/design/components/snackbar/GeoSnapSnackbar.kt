@@ -28,7 +28,7 @@ import androidx.compose.ui.unit.dp
 import com.kayakstudio.geosnap.ui.design.tokens.Colors
 
 @Composable
-fun PharmSnackbar(
+fun GeoSnapSnackbar(
     title: String,
     description: String,
     type: SnackbarType,

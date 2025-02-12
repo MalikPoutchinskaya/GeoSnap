@@ -14,5 +14,4 @@ data class UserEntity(
     @ColumnInfo(name = "phone_number") val phoneNumber: String,
     @ColumnInfo(name = "about_me") val aboutMe: String,
     @ColumnInfo(name = "image_url") val imageUrl: String?,
-    @ColumnInfo(name = "image_id") val imageId: Int?,
 )

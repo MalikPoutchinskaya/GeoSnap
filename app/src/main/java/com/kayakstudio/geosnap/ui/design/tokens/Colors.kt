@@ -51,77 +51,9 @@ object Colors {
     // Roles
     // -----------------------------------------------------
 
-    val orange = mustard500
-    val orangeLight = mustard200
-    val orangeUltraLight = mustard50
-    val secondaryColor = purple500
-    val secondaryLightColor = purple200
     val errorText = red900
-    val errorBackground = red200
-    val errorBackgroundLight = red50
     val successText = green900
-    val successBackground = green200
     val warningText = mustard900
-    val warningBackground = mustard200
     val infoText = purple900
-    val infoBackground = purple200
-    val tooltipBackground = purple50
 
-    fun bgBrushedColors() = listOf(
-        orangeLight,
-        secondaryLightColor.copy(alpha = 0.5f),
-    )
-
-    fun textBrushedColors() = listOf(
-        orange,
-        orangeLight.copy(alpha = 0.5f),
-    )
-
-    fun getBlueShimmerColors(): List<Color> {
-        return listOf(
-            purple900,
-            purple600,
-            purple400,
-            purple200,
-            purple400,
-            purple600,
-            purple900,
-        )
-    }
-
-    fun getOrangeShimmerColors(): List<Color> {
-        return listOf(
-            mustard900,
-            mustard600,
-            mustard400,
-            mustard200,
-            mustard400,
-            mustard600,
-            mustard900,
-        )
-    }
-
-    fun getGreenShimmerColors(): List<Color> {
-        return listOf(
-            green900,
-            green600,
-            green400,
-            green200,
-            green400,
-            green600,
-            green900,
-        )
-    }
-
-    fun getRedShimmerColors(): List<Color> {
-        return listOf(
-            red900,
-            red600,
-            red400,
-            red200,
-            red400,
-            red600,
-            red900,
-        )
-    }
 }

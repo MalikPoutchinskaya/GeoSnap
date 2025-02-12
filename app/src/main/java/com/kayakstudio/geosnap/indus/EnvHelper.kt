@@ -1,9 +1,9 @@
 package com.kayakstudio.geosnap.indus
 
+import com.kayakstudio.geosnap.BuildConfig
 
-// FIXME
 object EnvHelper {
-    val isProduction = false
+    val isProduction = BuildConfig.DEBUG.not()
     val isMock = false
     val isMockWithServer = false
 }

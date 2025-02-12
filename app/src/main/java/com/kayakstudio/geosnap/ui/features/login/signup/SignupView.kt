@@ -15,6 +15,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.kayakstudio.geosnap.R
 import com.kayakstudio.geosnap.ui.design.components.TextFields
+import com.kayakstudio.geosnap.ui.design.components.TextFields.PasswordField
 import com.kayakstudio.geosnap.ui.design.components.ccp.CountryPickerView
 import com.kayakstudio.geosnap.ui.design.components.ccp.getCountriesList
 import com.kayakstudio.geosnap.ui.features.login.AuthContract
@@ -96,5 +97,9 @@ fun SignupView(
                 )
             },
         )
+        Spacer(Modifier.height(heightSpacer))
+        PasswordField(stringResource(R.string.signupScreen_form_password), state.newPassword) {
+            onEvent(AuthContract.Event.OnNewPasswordChanged(it))
+        }
     }
 }

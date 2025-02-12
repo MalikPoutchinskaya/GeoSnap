@@ -1,19 +1,4 @@
-/*
- * Copyright 2021 OPTIMETRIKS
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-package com.kayakstudio.geosnap.ui.features.camera
+package com.kayakstudio.geosnap.ui.features.camera.frame
 
 import com.kayakstudio.geosnap.ui.tools.mvi.UiEffect
 import com.kayakstudio.geosnap.ui.tools.mvi.UiEvent
@@ -24,9 +9,7 @@ class CameraContract {
 
     sealed class Effect : UiEffect {
         data object NavigateBack : Effect()
-        data object NavigateToCameraScreen : Effect()
         data object NavigateToGeoGuessValidationScreen : Effect()
-        data object OpenGallery : Effect()
 
         data class ShowErrorMessage(val message: String) : Effect()
         data object ShowPhotoSentMessage : Effect()
@@ -35,8 +18,6 @@ class CameraContract {
 
     sealed class Event : UiEvent {
         data object OnUserClickOnBack : Event()
-        data object OnUserClickOnLaunchCamera : Event()
-        data object OnUserClickOnBrowseGallery : Event()
         data object OnUserClickOnPhotoCapture : Event()
         data object OnUserClickOnPhotoClose : Event()
         data object OnUserValidatePhoto : Event()
@@ -44,7 +25,6 @@ class CameraContract {
     }
 
     data class State(
-        val pictureUrl: String,
         val img: ByteArray?,
         val isCapturing: Boolean,
         val isSending: Boolean,

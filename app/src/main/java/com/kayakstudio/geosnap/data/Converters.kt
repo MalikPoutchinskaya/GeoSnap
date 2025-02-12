@@ -31,14 +31,4 @@ class Converters {
     @TypeConverter
     fun dateToTimestamp(date: LocalDateTime?): String? = date?.toString()
 
-    //
-    // LocalDate
-    // =========================================================
-
-    @TypeConverter
-    fun fromTimestampToLocalDate(value: String?): LocalDate? = value?.let { LocalDate.parse(it) }
-
-    @TypeConverter
-    fun localDateToTimestamp(date: LocalDate?): String? = date?.toString()
-
 }

@@ -1,4 +1,4 @@
-package com.kayakstudio.geosnap.ui.features.camera
+package com.kayakstudio.geosnap.ui.features.camera.frame
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -37,7 +37,7 @@ import androidx.compose.ui.unit.dp
 import com.kayakstudio.geosnap.ui.design.components.AppBars
 import com.kayakstudio.geosnap.ui.design.components.Scaffolds
 import com.kayakstudio.geosnap.ui.design.tokens.Dimens
-import com.kayakstudio.geosnap.ui.features.camera.components.InstagramCameraButton
+import com.kayakstudio.geosnap.ui.features.camera.components.CameraButton
 import com.preat.peekaboo.image.picker.ResizeOptions
 import com.preat.peekaboo.ui.camera.CameraMode
 import com.preat.peekaboo.ui.camera.PeekabooCamera
@@ -49,6 +49,7 @@ fun CameraScaffold(
     uiState: CameraContract.State,
     onEvent: (CameraContract.Event) -> Unit,
 ) {
+    // todo: Adjust compression if needed
     val resizeOptions = ResizeOptions(
         resizeThresholdBytes = 1048576L, // 1MB
         compressionQuality = 0.5 // Adjust compression quality (0.0 to 1.0)
@@ -144,7 +145,7 @@ private fun CameraOverlay(
                             Spacer(Modifier.height(16.dp))
                         }
                     } else {
-                        InstagramCameraButton(
+                        CameraButton(
                             modifier = Modifier
                                 .align(Alignment.BottomCenter)
                                 .padding(bottom = 16.dp),
