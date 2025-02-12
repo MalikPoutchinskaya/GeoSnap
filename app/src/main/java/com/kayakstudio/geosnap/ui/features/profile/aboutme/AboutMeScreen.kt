@@ -11,6 +11,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.getScreenModel
@@ -23,7 +24,6 @@ import com.kayakstudio.geosnap.ui.design.components.TextFields
 import com.kayakstudio.geosnap.ui.design.components.snackbar.SnackbarManager.showErrorSnackbar
 import kotlinx.coroutines.flow.collectLatest
 import org.koin.core.component.KoinComponent
-
 
 object AboutMeScreen : Screen, KoinComponent {
 
@@ -67,7 +67,7 @@ private fun AboutMeContent(
         topBar = {
             AppBars.Top(
                 scrollBehavior = scrollBehavior,
-                title = "About me"
+                title = stringResource(R.string.aboutMeScreen_title)
             ) { onEvent(AboutMeContract.Event.OnBackClicked) }
         },
         content = {
@@ -75,7 +75,7 @@ private fun AboutMeContent(
                 modifier = Modifier.height(335.dp),
                 value = state.aboutMe,
                 label = "",
-                hint = "Tell me about you.",
+                hint = stringResource(R.string.aboutMeScreen_hint),
                 maxLines = 10,
             ) {
                 onEvent(AboutMeContract.Event.OnAboutMeChanged(it))
@@ -83,7 +83,7 @@ private fun AboutMeContent(
         },
         bottomBar = {
             AppBars.Bottom(
-                firstButtonText = "SAVE",
+                firstButtonText = stringResource(R.string.aboutMeScreen_save_button),
                 isLoading = state.isLoading,
                 onFirstButtonClicked = { onEvent(AboutMeContract.Event.OnSave) },
             )

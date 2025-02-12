@@ -14,7 +14,7 @@ class DocumentApiStub : DocumentApi {
 
     override suspend fun postProfilePicture(userId: String, img: ByteArray): ApiResponse<String> {
         delay(500)
-        return ApiResponse.Success("https://media.licdn.com/dms/image/v2/C4D03AQFyKmuTjCpgZw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1613555383548?e=1735776000&v=beta&t=VmVKgqJJbHS4Mwt14-0yTibeFGTrv431U1YWtwN0x3Y")
+        return ApiResponse.Success("https://ipj.eu/wp-content/uploads/2023/06/denis-brogniart-scaled.jpeg")
     }
 
     override suspend fun postGeoGuesserPicture(

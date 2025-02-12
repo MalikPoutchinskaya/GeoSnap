@@ -1,11 +1,7 @@
 package com.kayakstudio.geosnap.ui.features.profile.updatepassword
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Visibility
@@ -14,14 +10,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.setValue
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
@@ -35,9 +24,7 @@ import cafe.adriel.voyager.koin.getScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import com.kayakstudio.geosnap.R
-import com.kayakstudio.geosnap.ui.design.components.AppBars
-import com.kayakstudio.geosnap.ui.design.components.Scaffolds
-import com.kayakstudio.geosnap.ui.design.components.TextFields
+import com.kayakstudio.geosnap.ui.design.components.*
 import com.kayakstudio.geosnap.ui.design.components.TextFields.PasswordField
 import com.kayakstudio.geosnap.ui.design.components.snackbar.SnackbarManager.showErrorSnackbar
 import kotlinx.coroutines.flow.collectLatest
@@ -84,7 +71,7 @@ fun UpdatePasswordContent(
         topBar = {
             AppBars.Top(
                 scrollBehavior = scrollBehavior,
-                title = "Update Password"
+                title = stringResource(R.string.updatePasswordScreen_title)
             ) { onEvent(UpdatePasswordContract.Event.OnNavigateBack) }
         },
         content = {
@@ -94,20 +81,20 @@ fun UpdatePasswordContent(
                     .verticalScroll(rememberScrollState()),
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-                PasswordField("Old Password", state.old1) {
+                PasswordField(stringResource(R.string.updatePasswordScreen_old_password), state.old1) {
                     onEvent(UpdatePasswordContract.Event.OnPasswordChanged(1, it))
                 }
-                PasswordField("New Password", state.old2) {
+                PasswordField(stringResource(R.string.updatePasswordScreen_new_password), state.old2) {
                     onEvent(UpdatePasswordContract.Event.OnPasswordChanged(2, it))
                 }
-                PasswordField("Confirm Password", state.new) {
+                PasswordField(stringResource(R.string.updatePasswordScreen_confirm_password), state.new) {
                     onEvent(UpdatePasswordContract.Event.OnPasswordChanged(3, it))
                 }
             }
         },
         bottomBar = {
             AppBars.Bottom(
-                firstButtonText = "UPDATE",
+                firstButtonText = stringResource(R.string.updatePasswordScreen_update_button),
                 onFirstButtonClicked = { onEvent(UpdatePasswordContract.Event.OnNavigateBack) },
             )
         }

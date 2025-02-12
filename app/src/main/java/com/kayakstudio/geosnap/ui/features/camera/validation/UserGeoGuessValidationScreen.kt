@@ -6,6 +6,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.getNavigatorScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
@@ -45,8 +46,8 @@ object UserGeoGuessValidationScreen : Screen {
 
                     CameraContract.Effect.ShowPhotoSentMessage ->
                         scope.showSuccessSnackbar(
-                            title = "Geoguess picture sent!",
-                            description = "Your friend will shortly try to find you :)"
+                            title = context.getString(R.string.photoSentScreen_success_title),
+                            description = context.getString(R.string.photoSentScreen_success_description),
                         )
                 }
             }

@@ -1,9 +1,8 @@
 package com.kayakstudio.geosnap.data.stubs.samples
 
-import com.google.android.gms.maps.model.LatLng
-import com.kayakstudio.geosnap.data.player.PlayerDto
 import com.kayakstudio.geosnap.data.picture.LocationDto
 import com.kayakstudio.geosnap.data.picture.PlayerPictureDto
+import com.kayakstudio.geosnap.data.player.PlayerDto
 import com.kayakstudio.geosnap.data.user.UserDto
 import com.raedghazal.kotlinx_datetime_ext.now
 import kotlinx.datetime.LocalDateTime
@@ -17,7 +16,8 @@ object SampleDto {
         lastName = "",
         phoneNumber = null,
         imageUrl = null,
-        aboutMe = ""
+        aboutMe = "",
+        points = 0
     )
 
     val player = PlayerDto(

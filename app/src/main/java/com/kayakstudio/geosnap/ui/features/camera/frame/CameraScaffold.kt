@@ -31,9 +31,11 @@ import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.kayakstudio.geosnap.R
 import com.kayakstudio.geosnap.ui.design.components.AppBars
 import com.kayakstudio.geosnap.ui.design.components.Scaffolds
 import com.kayakstudio.geosnap.ui.design.tokens.Dimens
@@ -95,12 +97,12 @@ fun PermissionDenied(modifier: Modifier = Modifier) {
     ) {
         Icon(
             imageVector = Icons.Default.Warning,
-            contentDescription = "Warning Icon",
+            contentDescription = stringResource(R.string.cameraScreen_permission_icon_desc),
             tint = MaterialTheme.colorScheme.onBackground,
         )
         Spacer(modifier = Modifier.height(16.dp))
         Text(
-            text = "Please grant the camera permission!",
+            text = stringResource(R.string.cameraScreen_permission_denied),
             color = MaterialTheme.colorScheme.onBackground,
             textAlign = TextAlign.Center,
         )

@@ -26,5 +26,6 @@ class ProfileContract {
 
     data class State(
         val user: UserModel? = null,
+        val points: Int = 0,
     ) : UiState
 }

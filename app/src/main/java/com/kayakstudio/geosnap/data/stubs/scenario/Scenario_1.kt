@@ -21,6 +21,7 @@ fun buildScenario() = run {
         lastName = "Brogniart",
         phoneNumber = "+33612345678",
         imageUrl = "https://www.lequipe.fr/_medias/img-photo-jpg/denis-brogniart-photo-julien-faure-l-equipe/1500000001337636/37:471,1921:2355-828-828-75/89c9b",
+        points = 4560
     )
     StubRemoteDatabase.users.add(user)
 
@@ -104,7 +105,7 @@ fun buildScenario() = run {
                 displayName = user.displayName,
                 imageUrl = user.imageUrl,
                 aboutMe = user.aboutMe,
-                points = 4560
+                points = user.points
             ),
             SampleDto.player.copy(
                 id = "maximus",

@@ -13,4 +13,5 @@ data class UserDto(
     @SerialName("phoneNumber") val phoneNumber: String? = null,
     @SerialName("imageUrl") val imageUrl: String? = null,
     @SerialName("aboutMe") val aboutMe: String? = null,
+    @SerialName("points") val points: Int,
 )

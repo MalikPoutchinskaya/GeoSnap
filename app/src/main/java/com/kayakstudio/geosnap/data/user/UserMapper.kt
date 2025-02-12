@@ -10,6 +10,7 @@ fun UserDto.toEntity(): UserEntity =
         phoneNumber = this.phoneNumber ?: "",
         imageUrl = this.imageUrl,
         aboutMe = this.aboutMe ?: "",
+        points = this.points
     )
 
 
@@ -23,4 +24,5 @@ fun UserEntity.toModel() =
         phoneNumber = this.phoneNumber,
         imageUrl = this.imageUrl,
         aboutMe = this.aboutMe,
+        points = this.points,
     )

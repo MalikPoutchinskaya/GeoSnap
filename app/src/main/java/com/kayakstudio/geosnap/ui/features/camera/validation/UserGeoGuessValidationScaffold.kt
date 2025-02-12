@@ -18,7 +18,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.kayakstudio.geosnap.R
 import com.kayakstudio.geosnap.ui.design.components.AppBars
 import com.kayakstudio.geosnap.ui.design.components.Scaffolds
 import com.kayakstudio.geosnap.ui.features.camera.frame.CameraContract
@@ -41,7 +43,7 @@ fun UserGeoGuessValidationScaffold(
             containerColor = Color.Transparent,
             topBar = {
                 AppBars.Top(
-                    title = "Woow, looks good!",
+                    title = stringResource(R.string.validationScreen_title),
                     colors = TopAppBarDefaults.topAppBarColors()
                         .copy(containerColor = Color.Transparent)
                 ) { onEvent(CameraContract.Event.OnUserClickOnBack) }
@@ -50,7 +52,7 @@ fun UserGeoGuessValidationScaffold(
                 AppBars.Bottom(
                     isLoading = uiState.isSending,
                     firstButtonPainter = rememberVectorPainter(Icons.Default.Check),
-                    firstButtonText = "Validate my Geo Guess",
+                    firstButtonText = stringResource(R.string.validationScreen_validate_button),
                     onFirstButtonClicked = { onEvent(CameraContract.Event.OnUserValidatePhoto) },
                 )
             },
@@ -68,7 +70,7 @@ private fun UserGeoGuessImage(img: ByteArray?) {
         ) {
             Image(
                 bitmap = bitmap,
-                contentDescription = "frame",
+                contentDescription = stringResource(R.string.validationScreen_image_desc),
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .fillMaxSize()

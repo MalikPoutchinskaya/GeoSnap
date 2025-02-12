@@ -1,11 +1,13 @@
 package com.kayakstudio.geosnap.ui.features.profile
 
 import cafe.adriel.voyager.core.model.screenModelScope
+import com.kayakstudio.geosnap.data.player.PlayerRepository
 import com.kayakstudio.geosnap.data.user.UserRepository
 import com.kayakstudio.geosnap.ui.tools.mvi.MviScreenModel
 import kotlinx.coroutines.launch
 
 class ProfileScreenModel(
+    private val playerRepository: PlayerRepository,
     private val userRepository: UserRepository,
 ) : MviScreenModel<ProfileContract.Event, ProfileContract.State, ProfileContract.Effect>() {
 

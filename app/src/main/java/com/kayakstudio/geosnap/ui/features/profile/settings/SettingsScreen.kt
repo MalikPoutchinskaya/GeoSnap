@@ -36,6 +36,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cafe.adriel.voyager.core.screen.Screen
@@ -82,10 +83,10 @@ object SettingsScreen : Screen, KoinComponent {
             BottomSheets.Default(
                 sheetState = sheetState,
                 scope = scope,
-                title = "Log out",
-                content = "Are you sure you want to leave?",
-                positiveButtonLabel = "YES",
-                negativeButtonLabel = "CANCEL",
+                title = stringResource(R.string.settingsScreen_logout_title),
+                content = stringResource(R.string.settingsScreen_logout_description),
+                positiveButtonLabel = stringResource(R.string.settingsScreen_logout_confirm),
+                negativeButtonLabel = stringResource(R.string.settingsScreen_logout_cancel),
                 onDismissed = {
                     screenModel.setEvent(SettingsContract.Event.OnDismissLogoutDialogClicked)
                 },
@@ -102,7 +103,6 @@ object SettingsScreen : Screen, KoinComponent {
     }
 }
 
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsContent(
@@ -116,7 +116,7 @@ fun SettingsContent(
         topBar = {
             AppBars.Top(
                 scrollBehavior,
-                "Settings"
+                stringResource(R.string.settingsScreen_title)
             ) { onEvent(SettingsContract.Event.OnBackClicked) }
         },
         content = {
@@ -128,24 +128,24 @@ fun SettingsContent(
             ) {
                 SettingToggleItem(
                     icon = Icons.Default.Notifications,
-                    title = "Notifications",
+                    title = stringResource(R.string.settingsScreen_notifications),
                     toggleState = state.isNotificationsEnabled,
                     onToggleChange = { onEvent(SettingsContract.Event.OnNotificationsChanged) }
                 )
                 SettingToggleItem(
                     icon = Icons.Default.Brightness6,
-                    title = "Dark mode",
+                    title = stringResource(R.string.settingsScreen_dark_mode),
                     toggleState = state.isDarkModeEnabled,
                     onToggleChange = { onEvent(SettingsContract.Event.OnDarkModeChanged) }
                 )
                 SettingNavigationItem(
                     icon = Icons.Default.Password,
-                    title = "Password",
+                    title = stringResource(R.string.settingsScreen_password),
                     onClick = { onEvent(SettingsContract.Event.OnUpdatePasswordClicked) }
                 )
                 SettingNavigationItem(
                     icon = Icons.AutoMirrored.Filled.Logout,
-                    title = "Logout",
+                    title = stringResource(R.string.settingsScreen_logout),
                     onClick = { onEvent(SettingsContract.Event.OnLogoutRequestClicked) }
                 )
             }

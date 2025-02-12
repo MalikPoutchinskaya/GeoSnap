@@ -102,15 +102,12 @@ class UpdateProfileScreenModel(
                     firstName = user.firstName,
                     lastName = user.lastName,
                     email = user.email,
+                    imageUrl = user.imageUrl,
                     gender = "",
                     dateOfBirth = "",
                     accountPhoneNumber = AccountPhoneNumber.init(user.phoneNumber),
                 )
             }
-        }
-        screenModelScope.launch {
-            val user = userRepository.getUserOrThrow()
-            user.imageUrl?.let { setState { copy(imageUrl = it) } }
         }
     }
 

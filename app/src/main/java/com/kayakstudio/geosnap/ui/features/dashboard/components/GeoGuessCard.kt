@@ -23,7 +23,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.kayakstudio.geosnap.R
 import com.kayakstudio.geosnap.ui.design.components.Texts
 
 @Composable
@@ -52,19 +54,19 @@ fun GeoGuessCard(modifier: Modifier = Modifier, onClick: () -> Unit) {
                 )
                 Spacer(Modifier.width(16.dp))
                 Column {
-                    Texts.SubTitle("New Geo Guess!")
-                    Text("Start finding your friend location and earn points!!")
+                    Texts.SubTitle(stringResource(R.string.geoGuessScreen_newGuess_title))
+                    Text(stringResource(R.string.geoGuessScreen_newGuess_description))
                     Spacer(Modifier.height(8.dp))
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                     ) {
                         Spacer(modifier = Modifier.weight(1f))
                         Row(verticalAlignment = Alignment.CenterVertically) {
-                            Text(text = "Start")
+                            Text(text = stringResource(R.string.geoGuessScreen_newGuess_startButton))
                             Spacer(modifier = Modifier.width(4.dp))
                             Icon(
                                 Icons.AutoMirrored.Filled.ArrowRightAlt,
-                                "ArrowRight",
+                                stringResource(R.string.geoGuessScreen_arrow_icon_desc),
                             )
                         }
                     }

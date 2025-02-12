@@ -35,6 +35,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -48,10 +49,8 @@ import com.kayakstudio.geosnap.ui.design.components.Pictures
 import com.kayakstudio.geosnap.ui.design.components.snackbar.SnackbarManager.showErrorSnackbar
 import com.kayakstudio.geosnap.ui.design.tokens.Dimens
 import com.kayakstudio.geosnap.ui.features.profile.aboutme.AboutMeScreen
-import com.kayakstudio.geosnap.ui.features.profile.profileskillsselection.ProfileSkillsSelectionScreen
 import com.kayakstudio.geosnap.ui.features.profile.settings.SettingsScreen
 import com.kayakstudio.geosnap.ui.features.profile.updateprofile.UpdateProfileScreen
-import com.preat.peekaboo.image.picker.toImageBitmap
 import io.kamel.image.asyncPainterResource
 import kotlinx.coroutines.flow.collectLatest
 import org.koin.core.component.KoinComponent
@@ -119,7 +118,7 @@ fun ProfileScreenContent(
                     { Text(user.aboutMe, fontSize = 14.sp) }
                 }
                 ProfileSection(
-                    title = "About me",
+                    title = stringResource(R.string.profileScreen_about_me),
                     icon = Icons.Outlined.Person,
                     isIncremental = false,
                     onActionClicked = { onEvent(ProfileContract.Event.OnAboutMeClicked) },
@@ -156,7 +155,7 @@ fun ProfileHeader(
             IconButton(onClick = { onSettingsClicked() }) {
                 Icon(
                     imageVector = Icons.Default.Settings,
-                    contentDescription = "Settings",
+                    contentDescription = stringResource(R.string.profileScreen_settings),
                     tint = MaterialTheme.colorScheme.inverseOnSurface
                 )
             }
@@ -178,8 +177,8 @@ fun ProfileHeader(
             ),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            ProfileStat(title = "120k", subtitle = "Earned")
-            ProfileStat(title = "23", subtitle = "Missions")
+            ProfileStat(title = user.points.toString(), subtitle = stringResource(R.string.profileScreen_label_earned))
+            ProfileStat(title = "78", subtitle = stringResource(R.string.profileScreen_label_geoguess))
 
             Spacer(modifier = Modifier.weight(1f))
             Button(
@@ -187,7 +186,7 @@ fun ProfileHeader(
                 colors = ButtonDefaults.filledTonalButtonColors()
             ) {
                 Row(verticalAlignment = Alignment.CenterVertically) {
-                    Text("Edit profile")
+                    Text(stringResource(R.string.profileScreen_button_editProfile))
                     Spacer(Modifier.width(8.dp))
                     Icon(Icons.Default.Edit, "Edit")
                 }
