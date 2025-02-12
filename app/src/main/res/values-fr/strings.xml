@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+    <string name="app_name" translatable="false">GeoSnap</string>
+
+    <!-- About Me -->
+    <string name="aboutMeScreen_hint">Parlez-nous un peu de vous…</string>
+    <string name="aboutMeScreen_save_button">Enregistrer</string>
+    <string name="aboutMeScreen_title">À propos de moi</string>
+
+    <!-- Camera Screen -->
+    <string name="cameraScreen_permission_denied">Veuillez autoriser l\'accès à la caméra !</string>
+    <string name="cameraScreen_permission_icon_desc">Icône d\'avertissement</string>
+
+    <!-- Check Email Screen -->
+    <string name="checkEmailScreen_actions_firstButton">Ouvrir votre email</string>
+    <string name="checkEmailScreen_actions_secondButton">Retour à la connexion</string>
+    <string name="checkEmailScreen_main_description">Nous avons envoyé le lien de réinitialisation du mot de passe à l\'adresse e-mail %1$s</string>
+    <string name="checkEmailScreen_main_title">Vérifiez votre email</string>
+    <string name="checkEmailScreen_notification_thirdButton">Renvoyer</string>
+    <string name="checkEmailScreen_notification_thirdLabel">Vous n\'avez pas reçu l\'email ?</string>
+    <string name="checkEmailScreen_snackbar_resendConfirmation">Email renvoyé</string>
+
+    <!-- Dashboard Screen -->
+    <string name="dashboardScreen_geoguess_text">Votre dernier Geo Guess</string>
+    <string name="dashboardScreen_greeting_text">Bonjour\n%1$s.</string>
+    <string name="dashboardScreen_ranking_title">Défiez vos amis et grimpez dans le classement !</string>
+
+    <!-- Default Snackbar -->
+    <string name="defaultSnackbar_button_dismiss">Fermer</string>
+    <string name="defaultSnackbar_title_error">Erreur</string>
+    <string name="defaultSnackbar_title_info">Info</string>
+    <string name="defaultSnackbar_title_success">Succès</string>
+    <string name="defaultSnackbar_title_warning">Avertissement</string>
+
+    <!-- Forgot Password Screen -->
+    <string name="forgotPasswordScreen_actions_firstButton">Réinitialiser le mot de passe</string>
+    <string name="forgotPasswordScreen_actions_secondButton">Retour à la connexion</string>
+    <string name="forgotPasswordScreen_form_emailHint">john.doe@geosnap.com</string>
+    <string name="forgotPasswordScreen_form_emailLabel">Email</string>
+    <string name="forgotPasswordScreen_main_description">Pour réinitialiser votre mot de passe, fournissez un email ou un numéro de mobile valide.</string>
+    <string name="forgotPasswordScreen_main_title">Mot de passe oublié ?</string>
+
+    <!-- GeoGuess Screen -->
+    <string name="geoGuessScreen_arrow_icon_desc">Naviguer vers le défi</string>
+    <string name="geoGuessScreen_newGuess_description">Trouvez l\'emplacement de votre ami et grimpez dans le classement !</string>
+    <string name="geoGuessScreen_newGuess_startButton">C\'est parti</string>
+    <string name="geoGuessScreen_newGuess_title">Nouveau défi Geo Guess !</string>
+
+    <!-- GeoGuesser Screen -->
+    <string name="geoGuesserScreen_button_next">SUIVANT</string>
+    <string name="geoGuesserScreen_button_reveal">RÉVÉLER</string>
+    <string name="geoGuesserScreen_done_description">Trouvez de nouveaux amis pour plus de contenu et grimpez dans le classement !</string>
+    <string name="geoGuesserScreen_done_title">C\'est terminé !</string>
+    <string name="geoGuesserScreen_result_text">%1$s mètres !</string>
+
+    <!-- Login Screen -->
+    <string name="loginScreen_actions_firstButton">CONNEXION</string>
+    <string name="loginScreen_actions_forgotPassword">Mot de passe oublié ?</string>
+    <string name="loginScreen_actions_secondButton">SE CONNECTER AVEC GOOGLE</string>
+    <string name="loginScreen_footer_thirdButton">Inscription</string>
+    <string name="loginScreen_footer_thirdLabel">Vous n\'avez pas encore de compte ?</string>
+    <string name="loginScreen_form_emailHint">john.doe@geosnap.com</string>
+    <string name="loginScreen_form_emailLabel">Email</string>
+    <string name="loginScreen_form_passwordHint">top secret</string>
+    <string name="loginScreen_form_passwordLabel">Mot de passe</string>
+    <string name="loginScreen_main_description">Découvrez le jeu social où chaque selfie devient un défi de localisation amusant et immersif.</string>
+    <string name="loginScreen_main_title">Bienvenue</string>
+
+    <!-- Onboarding Screen -->
+    <string name="onboardingScreen_actions_nextButton">Suivant</string>
+    <string name="onboardingScreen_main_description">Capturez l’instant et défiez vos amis à deviner où vous êtes.</string>
+    <string name="onboardingScreen_main_title1">Partagez</string>
+    <string name="onboardingScreen_main_title2">Vos aventures</string>
+    <string name="onboardingScreen_main_title3">En un selfie !</string>
+
+    <!-- Photo Sent Screen -->
+    <string name="photoSentScreen_success_description">Votre ami essaiera bientôt de vous retrouver :)</string>
+    <string name="photoSentScreen_success_title">Photo GeoGuess envoyée !</string>
+
+    <!-- Profile Screen -->
+    <string name="profileScreen_about_me">À propos de moi</string>
+    <string name="profileScreen_button_editProfile">Modifier le profil</string>
+    <string name="profileScreen_label_earned">Points gagnés</string>
+    <string name="profileScreen_label_geoguess">Geo Guess</string>
+    <string name="profileScreen_settings">Paramètres</string>
+
+    <!-- Settings Screen -->
+    <string name="settingsScreen_dark_mode">Mode sombre</string>
+    <string name="settingsScreen_logout">Déconnexion</string>
+    <string name="settingsScreen_logout_cancel">Annuler</string>
+    <string name="settingsScreen_logout_confirm">Oui</string>
+    <string name="settingsScreen_logout_description">Êtes-vous sûr de vouloir vous déconnecter ?</string>
+    <string name="settingsScreen_logout_title">Déconnexion</string>
+    <string name="settingsScreen_notifications">Notifications</string>
+    <string name="settingsScreen_password">Changer le mot de passe</string>
+    <string name="settingsScreen_title">Paramètres</string>
+
+    <!-- Signup Screen -->
+    <string name="signupScreen_actions_firstButton">INSCRIPTION</string>
+    <string name="signupScreen_actions_secondButton">SE CONNECTER AVEC GOOGLE</string>
+    <string name="signupScreen_form_emailHint">john.doe@geosnap.com</string>
+    <string name="signupScreen_form_emailLabel">Email</string>
+    <string name="signupScreen_form_firstNameHint">John</string>
+    <string name="signupScreen_form_firstNameLabel">Prénom</string>
+    <string name="signupScreen_form_lastNameHint">Doe</string>
+    <string name="signupScreen_form_lastNameLabel">Nom</string>
+    <string name="signupScreen_form_password">Mot de passe</string>
+    <string name="signupScreen_form_passwordHint">top secret</string>
+    <string name="signupScreen_form_passwordLabel">Mot de passe</string>
+    <string name="signupScreen_form_phoneNumberHint">0612345678</string>
+    <string name="signupScreen_form_phoneNumberLabel">Numéro de téléphone</string>
+    <string name="signupScreen_main_description">Rejoignez l\'aventure GeoSnap et défiez vos amis à deviner où vous êtes en un selfie.</string>
+    <string name="signupScreen_main_title">Création d\'un compte</string>
+
+    <!-- Tabs -->
+    <string name="tab_geo_guess">Geo Guess</string>
+    <string name="tab_home">Accueil</string>
+    <string name="tab_profile">Profil</string>
+
+    <!-- Update Password Screen -->
+    <string name="updatePasswordScreen_confirm_password">Confirmer le nouveau mot de passe</string>
+    <string name="updatePasswordScreen_new_password">Nouveau mot de passe</string>
+    <string name="updatePasswordScreen_old_password">Mot de passe actuel</string>
+    <string name="updatePasswordScreen_title">Modifier le mot de passe</string>
+    <string name="updatePasswordScreen_update_button">Mettre à jour</string>
+
+    <!-- Update Profile Screen -->
+    <string name="updateProfileScreen_dob_hint">JJ/MM/AAAA</string>
+    <string name="updateProfileScreen_dob_label">Date de naissance</string>
+    <string name="validationScreen_image_desc">Image GeoGuess capturée</string>
+    <string name="validationScreen_title">Wow, c\'est parfait !</string>
+    <string name="validationScreen_validate_button">Valider mon Geo Guess</string>
+    <string name="updateProfileScreen_setPictureSheet_title">Définir une photo</string>
+    <string name="updateProfileScreen_setPictureSheet_content">D\'où souhaitez-vous prendre une photo ?</string>
+    <string name="updateProfileScreen_setPictureSheet_gallery">Galerie</string>
+    <string name="updateProfileScreen_setPictureSheet_camera">Appareil photo</string>
+    <string name="updateProfileScreen_genderSelection_title">Genre</string>
+    <string name="updateProfileScreen_genderSelection_male">Homme</string>
+    <string name="updateProfileScreen_genderSelection_female">Femme</string>
+</resources>

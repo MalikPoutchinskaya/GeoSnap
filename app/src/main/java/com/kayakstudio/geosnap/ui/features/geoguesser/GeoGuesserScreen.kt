@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.LocationOn
@@ -266,12 +268,10 @@ fun GeoGuesserScaffold(
         if (state.isFinished.not()) {
             Breadcrumb(
                 modifier = Modifier
+                    .systemBarsPadding()
                     .fillMaxWidth()
                     .align(Alignment.TopStart)
-                    .padding(
-                        horizontal = Dimens.horizontalScreenPadding,
-                        vertical = Dimens.verticalScreenPadding
-                    ),
+                    .padding(horizontal = Dimens.horizontalScreenPadding,),
                 bredCrumbSize = bredCrumbSize,
                 bredCrumbIndex = bredCrumbIndex
             )

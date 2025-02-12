@@ -36,6 +36,7 @@ fun DashboardScaffold(
     val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
 
     Scaffolds.SafePadding(
+        isNestedTabScreen = true,
         useDefaultHorizontalScreenPadding = false,
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {

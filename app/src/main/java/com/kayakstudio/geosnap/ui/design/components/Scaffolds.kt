@@ -53,6 +53,7 @@ object Scaffolds {
     @Composable
     fun SafePadding(
         useDefaultHorizontalScreenPadding: Boolean = true,
+        isNestedTabScreen: Boolean = false,
         modifier: Modifier = Modifier,
         topBar: @Composable () -> Unit = {},
         bottomBar: @Composable () -> Unit = {},
@@ -75,11 +76,12 @@ object Scaffolds {
             content = { paddingValues ->
                 val horizontalPadding =
                     if (useDefaultHorizontalScreenPadding) Dimens.horizontalScreenPadding else 0.dp
-                Box(
-                    Modifier
-                        .padding(paddingValues)
-                        .padding(horizontal = horizontalPadding)
-                ) {
+                val boxModifier = if (isNestedTabScreen) {
+                    Modifier.padding(top = paddingValues.calculateTopPadding())
+                } else {
+                    Modifier.padding(paddingValues)
+                }
+                Box(boxModifier.padding(horizontal = horizontalPadding)) {
                     content()
                 }
             }
